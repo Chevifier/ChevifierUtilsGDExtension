@@ -1,0 +1,9 @@
+[configuration]
+
+entry_symbol = "library_init"
+
+[libraries]
+
+linux.debug.x86_64 = "res://bin/libChevifierUtils.linux.template_debug.x86_64.so"
+windows.debug.x86_64 = "res://bin/libChevifierUtils.windows.template_debug.x86_64.dll"
+

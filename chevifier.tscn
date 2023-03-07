@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqrj8l76mehfq"]
+
+[ext_resource type="AudioStream" uid="uid://bmi6u1lyxehk" path="res://Cat Shat in the Box - josh pan.mp3" id="1_1aora"]
+
+[sub_resource type="GDScript" id="GDScript_lleu6"]
+script/source = "extends Chevifier
+
+func _ready():
+	start_test()
+	
+	#Prints \"2 : 10\" placeholder
+	print($LooperAudioStream.get_audio_length_in_minutes())
+
+
+
+
+func _on_looper_audio_stream_loop_occured(loop):
+	print(\"loop index %d happened\" % loop)
+"
+
+[node name="Chevifier" type="Chevifier"]
+script = SubResource("GDScript_lleu6")
+
+[node name="LooperAudioStream" type="LooperAudioStream" parent="."]
+loop_amount = 2
+loop_end = 4.0
+looping = true
+stream = ExtResource("1_1aora")
+autoplay = true
+
+[connection signal="loop_occured" from="LooperAudioStream" to="." method="_on_looper_audio_stream_loop_occured"]
