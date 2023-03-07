@@ -55,11 +55,10 @@ LooperAudioStream::~LooperAudioStream(){
 
 String LooperAudioStream::get_audio_length_in_minutes(){
     
-    double length = 130;
+    double length = 130; //TO-DO get stream length
     int minutes = UtilityFunctions::floor(length/60);
     int seconds = length - (minutes * 60);
     return UtilityFunctions::var_to_str(minutes) + ":" + UtilityFunctions::var_to_str(seconds);
-   // return "000:00";//"%03d : %02d" , minutes, seconds;
     
 }
 
