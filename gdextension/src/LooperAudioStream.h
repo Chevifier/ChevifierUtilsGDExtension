@@ -2,6 +2,7 @@
 #define LOOPERAUDIOSTREAM
 
 #include <godot_cpp/classes/audio_stream_player.hpp>
+#include <godot_cpp/classes/audio_stream.hpp>
 
 using namespace godot;
 
