@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn4vkkrc7aglk"]
+[gd_scene load_steps=4 format=3 uid="uid://dn4vkkrc7aglk"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_45itl"]
 [ext_resource type="AudioStream" uid="uid://bmi6u1lyxehk" path="res://Cat Shat in the Box - josh pan.mp3" id="2_xp8xf"]
+[ext_resource type="Script" path="res://LAS.gd" id="3_70lex"]
 
 [node name="ChevifierNode" type="Chevifier"]
 script = ExtResource("1_45itl")
@@ -12,5 +13,6 @@ loop_end = 4.0
 looping = true
 stream = ExtResource("2_xp8xf")
 autoplay = true
+script = ExtResource("3_70lex")
 
 [connection signal="loop_occured" from="LAS" to="." method="_on_looper_audio_stream_loop_occured"]

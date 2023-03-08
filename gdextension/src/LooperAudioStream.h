@@ -21,7 +21,8 @@ class LooperAudioStream : public AudioStreamPlayer {
     public:
         LooperAudioStream();
         ~LooperAudioStream();
-        void _process(float delta);
+        void update_loopstream();
+        void _notification(int p_what);
         void set_loop_amount(int loops);
         int get_loop_amount();
         void set_loop_start(const float _loop_start);

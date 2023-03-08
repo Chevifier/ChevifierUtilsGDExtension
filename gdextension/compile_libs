@@ -1,0 +1,7 @@
+#!/bin/bash
+
+scons -Q platform=linux
+scons -Q platform=windows
+
+echo "Build Complete"
+sleep 2

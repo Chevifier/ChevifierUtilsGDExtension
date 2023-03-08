@@ -1,7 +1,7 @@
 #include "LooperAudioStream.h"
 
-#include <godot_cpp/classes/ref.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/core/class_db.hpp>
 
 using namespace godot;
 
@@ -20,8 +20,7 @@ void LooperAudioStream::_bind_methods(){
     ClassDB::bind_method(D_METHOD("get_looping"), &LooperAudioStream::get_looping);
     
     ClassDB::bind_method(D_METHOD("reset_loop"),&LooperAudioStream::reset_loop);
-
-
+    ClassDB::bind_method(D_METHOD("update_loopstream"), &LooperAudioStream::update_loopstream);
     ClassDB::bind_method(D_METHOD("get_audio_length_in_minutes"), &LooperAudioStream::get_audio_length_in_minutes);
 
     //Add properties for the editor window
@@ -57,11 +56,12 @@ String LooperAudioStream::get_audio_length_in_minutes(){
     double length = get_stream()->get_length();
     int minutes = length/60;
     int seconds = length - (minutes * 60);
-    return UtilityFunctions::var_to_str(minutes) + ":" + UtilityFunctions::var_to_str(seconds);
+    String time = "{}:{}";
+    Array values = Array::make(minutes,seconds);
+    return time.format(values,"{}");
     
 }
-
-void LooperAudioStream::_process(float delta){
+void LooperAudioStream::update_loopstream(){
     if(looping == false){
         return;
     };
@@ -79,7 +79,24 @@ void LooperAudioStream::_process(float delta){
     if (is_playing() == false){
         if(current_loop != 0) current_loop = 0;
     }
+
+
 };
+
+
+//Workaround the prevent bug if user adds script
+//to node that causes C++ _process to stop working
+void LooperAudioStream::_notification(int p_what) {
+	switch (p_what) {
+		case NOTIFICATION_READY: 
+			set_process(true);
+			break;
+
+		case NOTIFICATION_PROCESS: 
+			update_loopstream();
+			break;		
+	}
+}
 
 void LooperAudioStream::set_loop_amount(int loops){
     loop_amount = loops;
