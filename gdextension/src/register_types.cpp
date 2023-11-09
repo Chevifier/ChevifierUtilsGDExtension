@@ -9,6 +9,7 @@
 //include the header files here 
 #include "chevifier.h"
 #include "LooperAudioStream.h"
+#include "object_scatter.h"
 
 using namespace godot;
 
@@ -19,6 +20,7 @@ void initialize_module(ModuleInitializationLevel p_level) {
 	//Register classes here
 	ClassDB::register_class<Chevifier>();
 	ClassDB::register_class<LooperAudioStream>();
+	ClassDB::register_class<ObjectScatter>();
 }
 
 void uninitialize_module(ModuleInitializationLevel p_level) {

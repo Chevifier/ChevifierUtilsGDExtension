@@ -38,7 +38,7 @@ void LooperAudioStream::_bind_methods(){
     //Create a signal and set variables it passes can add more Properties with "," seperation
     ADD_SIGNAL(MethodInfo("loop_occured", PropertyInfo(Variant::INT,"loop_idx")));
 
-};
+}
 
 LooperAudioStream::LooperAudioStream(){
     loop_start = 0.0;
@@ -46,7 +46,7 @@ LooperAudioStream::LooperAudioStream(){
     loop_amount = 0;
     current_loop = 0;
     looping = false;
-};
+}
 
 LooperAudioStream::~LooperAudioStream(){
 
@@ -81,7 +81,7 @@ void LooperAudioStream::update_loopstream(){
     }
 
 
-};
+}
 
 
 //Workaround the prevent bug if user adds script

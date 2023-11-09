@@ -1,11 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn4vkkrc7aglk"]
+[gd_scene load_steps=3 format=3 uid="uid://dn4vkkrc7aglk"]
 
-[ext_resource type="Script" path="res://test.gd" id="1_45itl"]
 [ext_resource type="AudioStream" uid="uid://bmi6u1lyxehk" path="res://Cat Shat in the Box - josh pan.mp3" id="2_xp8xf"]
-[ext_resource type="Script" path="res://LAS.gd" id="3_70lex"]
+
+[sub_resource type="GDScript" id="GDScript_q3ah2"]
+script/source = "extends Chevifier
+
+func _ready():
+	start_test()
+	print(\"In Seconds: \", $LAS.get_stream().get_length())
+	print(\"In Minutes: \",$LAS.get_audio_length_in_minutes())
+
+
+
+func _on_looper_audio_stream_loop_occured(loop):
+	print(\"loop index %d happened\" % loop)
+"
 
 [node name="ChevifierNode" type="Chevifier"]
-script = ExtResource("1_45itl")
+script = SubResource("GDScript_q3ah2")
 
 [node name="LAS" type="LooperAudioStream" parent="."]
 loop_amount = 2
@@ -13,6 +25,8 @@ loop_end = 4.0
 looping = true
 stream = ExtResource("2_xp8xf")
 autoplay = true
-script = ExtResource("3_70lex")
+
+[node name="ObjectScatter" type="ObjectScatter" parent="."]
+Count = 8
 
 [connection signal="loop_occured" from="LAS" to="." method="_on_looper_audio_stream_loop_occured"]
