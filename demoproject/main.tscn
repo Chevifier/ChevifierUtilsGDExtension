@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq0c67e5thtpv"]
+
+[ext_resource type="PackedScene" uid="uid://didbl8oxf35h8" path="res://box.tscn" id="2_ya84n"]
+
+[node name="Main" type="Node3D"]
+
+[node name="ObjectScatter" type="ObjectScatter" parent="."]
+Count = 6
+Distance = Vector3(12, 12, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0643983, 5.96046e-07, 0.0662355)
+
+[node name="BOX" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.94773, 10.0809, 6.67223)
+
+[node name="@CSGBox3D@19910" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18534, 10.0037, 3.29376)
+
+[node name="@CSGBox3D@19911" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8184, 8.48718, 2.71996)
+
+[node name="@CSGBox3D@19912" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87341, 10.943, 2.86805)
+
+[node name="@CSGBox3D@19913" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73621, 2.39219, 4.11766)
+
+[node name="@CSGBox3D@19914" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91727, 5.30778, 4.13785)

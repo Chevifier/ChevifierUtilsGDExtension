@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://didbl8oxf35h8"]
+
+[node name="BOX" type="CSGBox3D"]
