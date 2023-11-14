@@ -5,6 +5,7 @@
 [node name="Main" type="Node3D"]
 
 [node name="ObjectScatter" type="ObjectScatter" parent="."]
+Object = ExtResource("2_ya84n")
 Count = 6
 Distance = Vector3(12, 12, 12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0643983, 5.96046e-07, 0.0662355)
@@ -26,3 +27,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73621, 2.39219, 4.11766)
 
 [node name="@CSGBox3D@19914" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91727, 5.30778, 4.13785)
+
+[node name="@CSGBox3D@19352" type="CSGBox3D" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61466, 0.888192, 9.33378)
+
+[node name="@CSGBox3D@19353" type="CSGBox3D" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65593, 6.14847, 2.09588)
+
+[node name="@CSGBox3D@19354" type="CSGBox3D" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.701684, 2.15071, 2.89714)
+
+[node name="@CSGBox3D@19355" type="CSGBox3D" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.85754, 3.08116, 6.7259)
+
+[node name="@CSGBox3D@19356" type="CSGBox3D" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97128, 9.99676, 10.7191)
+
+[node name="@CSGBox3D@19357" type="CSGBox3D" parent="ObjectScatter" instance=ExtResource("2_ya84n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69307, 8.59564, 1.57693)

@@ -10,6 +10,7 @@
 #include "chevifier.h"
 #include "LooperAudioStream.h"
 #include "object_scatter.h"
+#include "AstroidBeltGenerator.h"
 
 using namespace godot;
 
@@ -21,6 +22,7 @@ void initialize_module(ModuleInitializationLevel p_level) {
 	ClassDB::register_class<Chevifier>();
 	ClassDB::register_class<LooperAudioStream>();
 	ClassDB::register_class<ObjectScatter>();
+	ClassDB::register_class<AsteroidBeltGenerator>();
 }
 
 void uninitialize_module(ModuleInitializationLevel p_level) {

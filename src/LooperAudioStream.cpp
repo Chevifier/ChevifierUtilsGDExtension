@@ -5,7 +5,8 @@
 
 using namespace godot;
 
-void LooperAudioStream::_bind_methods(){
+void LooperAudioStream::_bind_methods()
+{
     //Add methods for the public access class 
     ClassDB::bind_method(D_METHOD("set_loop_amount"), &LooperAudioStream::set_loop_amount);
     ClassDB::bind_method(D_METHOD("get_loop_amount"), &LooperAudioStream::get_loop_amount);
@@ -43,7 +44,6 @@ void LooperAudioStream::_bind_methods(){
     "set if audio should loop none stop until false"),"set_indefinite_looping","get_indefinite_looping");
     //Create a signal and set variables it passes can add more Properties with "," seperation
     ADD_SIGNAL(MethodInfo("loop_occured", PropertyInfo(Variant::INT,"loop_idx")));
-
 }
 
 LooperAudioStream::LooperAudioStream(){
